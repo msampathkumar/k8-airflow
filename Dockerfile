@@ -43,7 +43,8 @@ COPY config/airflow.cfg ${AIRFLOW_HOME}/airflow.cfg
 COPY dags/* ${AIRFLOW_HOME}/dags/
 COPY k8_scripts/pod.yaml ${AIRFLOW_HOME}/k8_scripts/pod.yaml
 
-
+# only for dev**
+# Copying local k8 config to docker also
 COPY config/k8_config ${AIRFLOW_HOME}/.kube/config
 COPY config/k8_config /root/.kube/config
 
